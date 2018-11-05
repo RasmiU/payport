@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+</head>
+<body>
+<form name="loginForm" method="post" action="stu1.html">
+<table width="50%" bgcolor="white" align="center">
+
+
+<tr>
+<td colspan=2><center><font size=4><b>PAYMENT PORTAL</b></font></center><br></br></td>
+</tr>
+
+
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="userid"></td>
+</tr>
+
+
+<td>Password:</td>
+<td><input type="Password" size=25 name="pwd"></td>
+
+
+<tr>
+<td>Choose Category:</td>
+<td><SELECT>
+
+<OPTION Value="student">student</OPTION>
+<OPTION Value="staff">staff</OPTION>
+
+
+</SELECT>
+</tr></td>
+
+
+
+
+<tr>
+
+<td><input type="submit"  onclick="return check(this.form);" value="next" </td>
+</tr>
+
+
+
+
+
+</table>
+</form>
+<script language="javascript">
+function check(form)
+{
+	if(form.userid.value="sreeshma" && form.pwd.value=="111")
+	{
+		return true;
+ 
+	}
+	else
+	{
+		alert("incorrect password or username")
+		return false;
+		
+	}
+
+}
+</script>
+
+</body>
+</html>
