@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS student (
   reg_no CHAR(10) NOT NULL ,
+  pswd VARCHAR(20) NOT NULL,
   name VARCHAR(30) NOT NULL,
   sem INT NOT NULL,
   dept VARCHAR(30) NOT NULL,
-  pswd VARCHAR(20) NOT NULL,
   paystatus TINYINT NOT NULL,
   PRIMARY KEY (reg_no,pswd)
 )ENGINE=INNODB;
@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS student (
 CREATE TABLE IF NOT EXISTS staff (
   staff_id CHAR(10) NOT NULL,
   pswd VARCHAR(20) NOT NULL ,
-  cat VARCHAR(15) NOT NULL,
   name VARCHAR(30) NOT NULL,
+  cat VARCHAR(15) NOT NULL,
   dept VARCHAR (30),
   amt INT ,
   paystatus TINYINT NOT NULL,
