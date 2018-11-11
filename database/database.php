@@ -5,7 +5,7 @@ require("../include/connection.php");
 //create database
 $sql = "CREATE DATABASE $dbname";
 if (mysqli_query($conn, $sql)) {
-    echo "Database created successfully";
+    echo "Database $dbname created successfully";
 
 } else {
     echo "Error creating database: " . mysqli_error($conn);
