@@ -1,16 +1,24 @@
-<?php require("../include/connection.php");
 
+<?php
+require("../include/connection.php");
 //create database
-$sql = "CREATE DATABASE payport";
+$dbname="paypol";
+$sql = "CREATE DATABASE $dbname";
 if (mysqli_query($conn, $sql)) {
     echo "Database created successfully";
+
 } else {
     echo "Error creating database: " . mysqli_error($conn);
 }
 
-
+//use Database
+$sql="USE $dbname";
+if (mysqli_query($conn, $sql)) {
+    echo "Changed successfully";
+} else {
+    echo "Error in Changing db " . mysqli_error($conn);
+}
 // create tables
-
 $tnameo="student";
 $sqlo = "CREATE TABLE IF NOT EXISTS $tnameo (
   reg_no CHAR(10) NOT NULL ,
@@ -21,13 +29,11 @@ $sqlo = "CREATE TABLE IF NOT EXISTS $tnameo (
   paystatus TINYINT NOT NULL,
   PRIMARY KEY (reg_no,pswd)
 )ENGINE=INNODB";
-
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($conn, $sqlo)) {
     echo "Table $tnameo created successfully";
 } else {
     echo "Error creating table $tnameo : " . mysqli_error($conn);
 }
-
 
 
 $tnamet="staff";
@@ -41,13 +47,12 @@ $sqlt = "CREATE TABLE IF NOT EXISTS $tnamet (
   paystatus TINYINT NOT NULL,
   PRIMARY KEY (staff_id,pswd)
 ) ENGINE=INNODB";
-
 if (mysqli_query($conn, $sqlt)) {
     echo "Table $tnamet created successfully";
+
 } else {
     echo "Error creating table $tnamet : " . mysqli_error($conn);
 }
-
 $tnameth="amount";
 $sqlth = "CREATE TABLE IF NOT EXISTS $tnameth (
   reg_no CHAR(10) NOT NULL,
@@ -55,13 +60,11 @@ $sqlth = "CREATE TABLE IF NOT EXISTS $tnameth (
   fee INT ,
   PRIMARY KEY (reg_no)
 )ENGINE=INNODB";
-
 if (mysqli_query($conn, $sqlth)) {
-    echo "Table $tnameo created successfully";
+    echo "Table $tnameth created successfully";
 } else {
-    echo "Error creating table $tnameo : " . mysqli_error($conn);
+    echo "Error creating table $tnameth : " . mysqli_error($conn);
 }
-
 mysqli_close($conn);
 ?>
 
