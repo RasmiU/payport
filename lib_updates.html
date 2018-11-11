@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 2px;
+  
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+  
+  background-color: #f1f1f1;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<h2>LIBRARY UPDATES</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">REG NO</th>
+    <th style="width:40%;">NAME</th>
+    <th style="width:40%;">FEES</th>
+  </tr>
+  <tr>
+    <td>0001</td>
+    <td>A</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td>0002</td>
+    <td>B</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td>0003</td>
+    <td>C</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td>0004</td>
+    <td>D</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td>0005</td>
+    <td>E</td>
+   <td>00</td>
+  </tr>
+  <tr>
+    <td>0006</td>
+    <td>F</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td>0007</td>
+    <td>G</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td>0001</td>
+    <td>H</td>
+    <td>00</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
+

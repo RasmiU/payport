@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-table, th, td {
-    border: 1px solid black;
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea  {
+    width: 100%;
+    padding: 12px;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    box-sizing: content-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: horizontal;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    max-width: 900px
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 100px;
 }
 </style>
 </head>
 <body>
 
-<table>
-  <colgroup>
-    <col span="2" style="background-color:red">
-    <col style="background-color:yellow">
-  </colgroup>
-</head>
-<body>
+<h3>Choose department..<br></br></h3>
 
-<h2>LIBRARY UPDATES</h2>
+<div class="container">
+	
 
-<table style="width:100%">
-  <tr>
- <th>REG NO.</th>
-  <th>NAME</th>
-    <th>LIBRARY FINE</th>
-  </tr>
-  <tr>
-    <td>16B001</td>
-    <td>John Davis</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>16B125</td>
-    <td>Sreeshma k t</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>16B002</td>
-    <td>Rasmi U</td>
-    <td>80</td>
-  </tr>
-</table>
+	  <form action="lib_updates.html">
+	    <label for="fname">DEPARTENT</label>
+	    <input type="text" id="fname" name="firstname" placeholder="Enter dept name.." >
+
+	    <label for="lname">SEMESTER</label>
+	    <input type="text" id="lname" name="lastname" placeholder="Which semester..">
+
+
+	   
+	    <input type="submit" value="Submit">
+	  </form>
+	
+
+</div>
 
 </body>
 </html>
