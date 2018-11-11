@@ -5,7 +5,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="INNODB";
+$dbname="payport";
 
 //create connection
 $conn = mysqli_connect($servername,$username,$password);
